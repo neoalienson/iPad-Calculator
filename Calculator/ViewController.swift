@@ -170,12 +170,7 @@ class ViewController: UIViewController {
                 }
             }else{
                 if (secondNumber == 0){
-                    
-                    if (allClear != 2){
-                        labelAnswer.text = "\(secondNumber)";
-                    }else{
-                        labelAnswer.text = "\(firstNumber)";
-                    }
+                    labelAnswer.text = "\(secondNumber)";
                 }else{
                     labelAnswer.text = "\(secondNumber)";
                 }
@@ -206,7 +201,7 @@ class ViewController: UIViewController {
         
             if (operatorSet == "/"){
                 
-                if (secondNumber == 0){
+                if (secondNumber == 0.0){
                     firstNumber = firstNumber / firstNumber;
                 }else{
                     firstNumber = firstNumber / secondNumber;
@@ -215,7 +210,7 @@ class ViewController: UIViewController {
     
             if (operatorSet == "*"){
                 
-                if (secondNumber == 0){
+                if (secondNumber == 0.0){
                     firstNumber = firstNumber * firstNumber;
                 }else{
                     firstNumber = firstNumber * secondNumber;
@@ -224,8 +219,8 @@ class ViewController: UIViewController {
     
             if (operatorSet == "-"){
                 
-                if (secondNumber == 0){
-                    firstNumber = firstNumber / firstNumber;
+                if (secondNumber == 0.0){
+                    firstNumber = firstNumber - firstNumber;
                 }else{
                     firstNumber = firstNumber - secondNumber;
                 }
@@ -233,8 +228,8 @@ class ViewController: UIViewController {
     
             if (operatorSet == "+"){
                 
-                if (secondNumber == 0){
-                    firstNumber = firstNumber / firstNumber;
+                if (secondNumber == 0.0){
+                    firstNumber = firstNumber + firstNumber;
                 }else{
                     firstNumber = firstNumber + secondNumber;
                 }
@@ -300,7 +295,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonDevidePressed() {
         
-        if (operatorSet != "none"){
+        if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate();
             doRefresh();
         }
@@ -315,7 +310,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonMultiplyPressed() {
         
-        if (operatorSet != "none"){
+        if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate();
             doRefresh();
         }
@@ -330,7 +325,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonSubtractPressed() {
         
-        if (operatorSet != "none"){
+        if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate();
             doRefresh();
         }
@@ -345,7 +340,7 @@ class ViewController: UIViewController {
     
     @IBAction func buttonAddPressed() {
         
-        if (operatorSet != "none"){
+        if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate();
             doRefresh();
         
