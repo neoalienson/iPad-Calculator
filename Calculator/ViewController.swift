@@ -159,12 +159,7 @@ class ViewController: UIViewController {
             
             if (floatNumberBefore == floatNumberAfter){
                 if (secondNumber == 0){
-                    
-                    if (allClear != 2){
-                        labelAnswer.text = "\(secondNumberNoDec)";
-                    }else{
-                        labelAnswer.text = "\(firstNumberNoDec)";
-                    }
+                    labelAnswer.text = "\(secondNumberNoDec)";
                 }else{
                     labelAnswer.text = "\(secondNumberNoDec)";
                 }
@@ -373,6 +368,13 @@ class ViewController: UIViewController {
         allClear = 0;
         doMath();
         doRefresh();
+        if (decimalSet == true){
+            if (operatorSet != "none"){
+                labelAnswer.text = "\(secondNumber)";
+            }else{
+                labelAnswer.text = "\(firstNumber)";
+            }
+        }
     }
     
     @IBAction func button1Pressed() {
