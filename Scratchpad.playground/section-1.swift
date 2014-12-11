@@ -2,13 +2,16 @@
 
 import UIKit
 
-var firstNumber = 5.0;
-var integerNumber = Int(firstNumber);
-var floatNumberBefore = Float(firstNumber);
-var floatNumberAfter = Float(integerNumber);
+var number: Float = 5498888
 
-if (floatNumberBefore == floatNumberAfter){
-    println("\(integerNumber)");
-}else{
-    println("\(firstNumber)");
+var numberString = "\(number)"
+
+var numberStringLength = Float(countElements(numberString))
+
+if numberStringLength >= 10.0 {
+    
+    var numberToPrint = number * pow(10, -(numberStringLength-1))
+    
+} else {
+    var numberToPrint = number
 }
