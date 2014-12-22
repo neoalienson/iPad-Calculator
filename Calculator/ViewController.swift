@@ -9,25 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var labelAnswer: UILabel! //declare UI objects
-    @IBOutlet weak var buttonClear: UIButton!
-    @IBOutlet weak var buttonNegative: UIButton!
-    @IBOutlet weak var buttonDivide: UIButton!
-    @IBOutlet weak var buttonMultiply: UIButton!
-    @IBOutlet weak var buttonSubtract: UIButton!
-    @IBOutlet weak var buttonAdd: UIButton!
-    @IBOutlet weak var buttonEqual: UIButton!
-    @IBOutlet weak var buttonDecimal: UIButton!
-    @IBOutlet weak var button0: UIButton!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
-    @IBOutlet weak var button6: UIButton!
-    @IBOutlet weak var button7: UIButton!
-    @IBOutlet weak var button8: UIButton!
-    @IBOutlet weak var button9: UIButton!
+    @IBOutlet weak var labelAnswer: UILabel!
     
     var firstNumber = 0.0;
     var secondNumber = 0.0;
