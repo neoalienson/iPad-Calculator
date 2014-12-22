@@ -563,48 +563,22 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYo-mx-wDG">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="cHb-lp-DgO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="cHb-lp-DgO"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="cHb-lp-DgO"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Trb-Xh-S2a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jdc-gu-ah7"/>
-                            <constraint firstItem="uYo-mx-wDG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="cSw-d8-r0p"/>
                             <constraint firstItem="vrI-q3-8Vg" firstAttribute="centerX" secondItem="Trb-Xh-S2a" secondAttribute="centerX" id="drN-Qa-mlz"/>
                             <constraint firstItem="Trb-Xh-S2a" firstAttribute="top" secondItem="vrI-q3-8Vg" secondAttribute="bottom" constant="68" id="faf-G4-Fce"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Trb-Xh-S2a" secondAttribute="bottom" constant="70" id="lme-m2-e2K"/>
                             <constraint firstItem="vrI-q3-8Vg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="142" id="o04-uJ-TWS"/>
-                            <constraint firstItem="vrI-q3-8Vg" firstAttribute="centerX" secondItem="uYo-mx-wDG" secondAttribute="centerX" id="rJT-iq-7J2"/>
                             <constraint firstItem="Trb-Xh-S2a" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="284" id="wbT-WW-hBw"/>
                             <constraint firstItem="vrI-q3-8Vg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="zJC-E5-m2E"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="uYo-mx-wDG"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="drN-Qa-mlz"/>
                                 <exclude reference="o04-uJ-TWS"/>
-                                <exclude reference="rJT-iq-7J2"/>
                                 <exclude reference="zJC-E5-m2E"/>
-                                <exclude reference="cSw-d8-r0p"/>
                                 <exclude reference="Jdc-gu-ah7"/>
                                 <exclude reference="faf-G4-Fce"/>
                                 <exclude reference="wbT-WW-hBw"/>
@@ -612,15 +586,10 @@
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="uYo-mx-wDG"/>
-                            </mask>
                             <mask key="constraints">
                                 <include reference="drN-Qa-mlz"/>
                                 <include reference="o04-uJ-TWS"/>
-                                <include reference="rJT-iq-7J2"/>
                                 <include reference="zJC-E5-m2E"/>
-                                <include reference="cSw-d8-r0p"/>
                                 <include reference="Jdc-gu-ah7"/>
                                 <include reference="faf-G4-Fce"/>
                                 <include reference="wbT-WW-hBw"/>
