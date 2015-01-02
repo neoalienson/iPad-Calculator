@@ -31,7 +31,6 @@ class ViewController: UIViewController {
     
     var firstNumber = 0.0;
     var secondNumber = 0.0;
-    var secondNumberNoDec = 0;
     var newNumber = 0.0;
     var operatorSet = "none"
     var decimalSet = false;
@@ -42,6 +41,7 @@ class ViewController: UIViewController {
     var tempOp = "none";
     var tempNum = 0.0;
     var allClear = 0;
+    var equalSet = false;
     
     
     func doMath() {
@@ -140,36 +140,74 @@ class ViewController: UIViewController {
     }
     
     func doRefresh() {
-        var firstNumberNoDec = Int(firstNumber);
-        var secondNumberNoDec = Int(secondNumber);
+        var firstNumberNoDec = 0;
+        var secondNumberNoDec = 0;
         
         
         if (operatorSet == "none"){
             var floatNumberBefore = Float(firstNumber);
             var floatNumberAfter = Float(firstNumberNoDec);
             
-            if (floatNumberBefore == floatNumberAfter){
-                labelAnswer.text = "\(firstNumberNoDec)";
-            }else{
+            if firstNumber >= 9999999999.0{
+                
+                firstNumberNoDec = 0;
+                
                 labelAnswer.text = "\(firstNumber)";
+            }else{
+                
+                firstNumberNoDec = Int(firstNumber);
+                
+                if (floatNumberBefore == floatNumberAfter){
+                    labelAnswer.text = "\(firstNumber)";
+                }else{
+                    labelAnswer.text = "\(firstNumberNoDec)";
+                }
+
             }
         }else{
             var floatNumberBefore = Float(secondNumber);
             var floatNumberAfter = Float(secondNumberNoDec);
             
-            if (floatNumberBefore == floatNumberAfter){
+            if secondNumber >= 9999999999.0{
+                
+                secondNumberNoDec = 0;
+                
                 if (secondNumber == 0){
-                    labelAnswer.text = "\(secondNumberNoDec)";
+                    labelAnswer.text = "\(firstNumber)";
                 }else{
-                    labelAnswer.text = "\(secondNumberNoDec)";
+                    labelAnswer.text = "\(secondNumber)";
                 }
             }else{
-                if (secondNumber == 0){
-                    labelAnswer.text = "\(secondNumber)";
+                
+                secondNumberNoDec = Int(secondNumber);
+                
+                if (floatNumberBefore == floatNumberAfter){
+                    if (secondNumber == 0){
+                        labelAnswer.text = "\(firstNumber)";
+                    }else{
+                        labelAnswer.text = "\(secondNumber)";
+                    }
                 }else{
-                    labelAnswer.text = "\(secondNumber)";
+                    if (secondNumber == 0){
+                        labelAnswer.text = "\(firstNumberNoDec)";
+                    }else{
+                        labelAnswer.text = "\(secondNumberNoDec)";
+                    }
                 }
             }
+        }
+        
+        if (allClear == 1){
+            labelAnswer.text = "\(Int(secondNumber))";
+        }
+        
+        if (allClear == 2){
+            labelAnswer.text = "\(Int(firstNumber))";
+            allClear = 0;
+        }
+        
+        if (firstNumber == 0){
+            labelAnswer.text = "\(firstNumberNoDec)";
         }
     }
     
@@ -230,6 +268,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         doRefresh();
+        labelAnswer.text = "\(Int(firstNumber))";
     }
     
     override func didReceiveMemoryWarning() {
@@ -264,6 +303,7 @@ class ViewController: UIViewController {
     @IBAction func buttonClearPressed() {
         if (operatorSet == "none"){
             firstNumber = 0.0;
+            allClear = 1;
         }else{
             secondNumber = 0.0;
             allClear += 1;
@@ -272,12 +312,11 @@ class ViewController: UIViewController {
         if (allClear == 2){
             operatorSet = "none";
             firstNumber = 0.0;
-            allClear = 0;
-            
         }
         numberLenghtTwo = 0.0
         numberLenghtOne = 0.0
         decimalSet = false;
+        equalSet = false;
         doRefresh();
     }
     
@@ -294,6 +333,8 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0
         numberLenghtOne = 0.0
         doRefresh();
+        labelAnswer.text = "\(Int(firstNumber))";
+
     }
     
     @IBAction func buttonMultiplyPressed() {
@@ -309,6 +350,8 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0;
         numberLenghtOne = 0.0;
         doRefresh();
+        labelAnswer.text = "\(Int(firstNumber))";
+
     }
     
     @IBAction func buttonSubtractPressed() {
@@ -324,6 +367,8 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0;
         numberLenghtOne = 0.0;
         doRefresh();
+        labelAnswer.text = "\(Int(firstNumber))";
+
     }
     
     @IBAction func buttonAddPressed() {
@@ -339,6 +384,8 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0;
         numberLenghtOne = 0.0;
         doRefresh();
+        labelAnswer.text = "\(Int(firstNumber))";
+
     }
     
     @IBAction func buttonEqualsPressed() {
@@ -346,6 +393,7 @@ class ViewController: UIViewController {
         operatorSet = "none";
         secondNumber = 0.0;
         doRefresh();
+        equalSet = true;
     }
     
     @IBAction func button0Pressed() {
@@ -361,6 +409,12 @@ class ViewController: UIViewController {
         allClear = 0;
         doMath();
         doRefresh();
+        
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
+        }
+        
         if (decimalSet == true){
             if (operatorSet != "none"){
                 labelAnswer.text = "\(secondNumber)";
@@ -380,6 +434,11 @@ class ViewController: UIViewController {
             numberLenghtTwo += 1.0;
         }
         
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
+        }
+        
         allClear = 0;
         numberSelectedBool = true;
         doMath();
@@ -394,6 +453,11 @@ class ViewController: UIViewController {
         }else{
             newNumber = 0.2;
             numberLenghtTwo += 1.0;
+        }
+        
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
         }
         
         allClear = 0;
@@ -412,6 +476,11 @@ class ViewController: UIViewController {
             numberLenghtTwo += 1.0;
         }
         
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
+        }
+        
         allClear = 0;
         numberSelectedBool = true;
         doMath();
@@ -426,6 +495,11 @@ class ViewController: UIViewController {
         }else{
             newNumber = 0.4;
             numberLenghtTwo += 1.0;
+        }
+        
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
         }
         
         allClear = 0;
@@ -444,6 +518,11 @@ class ViewController: UIViewController {
             numberLenghtTwo += 1.0;
         }
         
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
+        }
+        
         allClear = 0;
         numberSelectedBool = true;
         doMath();
@@ -458,6 +537,11 @@ class ViewController: UIViewController {
         }else{
             newNumber = 0.6;
             numberLenghtTwo += 1.0;
+        }
+        
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
         }
         
         allClear = 0;
@@ -476,6 +560,11 @@ class ViewController: UIViewController {
             numberLenghtTwo += 1.0;
         }
         
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
+        }
+        
         allClear = 0;
         numberSelectedBool = true;
         doMath();
@@ -492,6 +581,11 @@ class ViewController: UIViewController {
             numberLenghtTwo += 1.0;
         }
         
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
+        }
+        
         allClear = 0;
         numberSelectedBool = true;
         doMath();
@@ -506,6 +600,11 @@ class ViewController: UIViewController {
         }else{
             newNumber = 0.9;
             numberLenghtTwo += 1.0;
+        }
+        
+        if (equalSet == true && operatorSet == "none"){
+            firstNumber = 0.0;
+            equalSet = false;
         }
         
         allClear = 0;
