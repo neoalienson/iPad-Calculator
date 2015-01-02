@@ -333,8 +333,11 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0
         numberLenghtOne = 0.0
         doRefresh();
-        labelAnswer.text = "\(Int(firstNumber))";
-
+        if firstNumber >= 9999999999.0{
+            labelAnswer.text = "\(firstNumber)";
+        }else{
+            labelAnswer.text = "\(Int(firstNumber))";
+        }
     }
     
     @IBAction func buttonMultiplyPressed() {
@@ -350,8 +353,11 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0;
         numberLenghtOne = 0.0;
         doRefresh();
-        labelAnswer.text = "\(Int(firstNumber))";
-
+        if firstNumber >= 9999999999.0{
+            labelAnswer.text = "\(firstNumber)";
+        }else{
+            labelAnswer.text = "\(Int(firstNumber))";
+        }
     }
     
     @IBAction func buttonSubtractPressed() {
@@ -367,8 +373,11 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0;
         numberLenghtOne = 0.0;
         doRefresh();
-        labelAnswer.text = "\(Int(firstNumber))";
-
+        if firstNumber >= 9999999999.0{
+            labelAnswer.text = "\(firstNumber)";
+        }else{
+            labelAnswer.text = "\(Int(firstNumber))";
+        }
     }
     
     @IBAction func buttonAddPressed() {
@@ -384,8 +393,11 @@ class ViewController: UIViewController {
         numberLenghtTwo = 0.0;
         numberLenghtOne = 0.0;
         doRefresh();
-        labelAnswer.text = "\(Int(firstNumber))";
-
+        if firstNumber >= 9999999999.0{
+            labelAnswer.text = "\(firstNumber)";
+        }else{
+            labelAnswer.text = "\(Int(firstNumber))";
+        }
     }
     
     @IBAction func buttonEqualsPressed() {
