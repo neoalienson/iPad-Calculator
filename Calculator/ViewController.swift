@@ -9,7 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var labelAnswer: UILabel!
+    @IBOutlet weak var labelAnswer: UILabel! //declare UI objects
+    @IBOutlet weak var buttonClear: UIButton!
+    @IBOutlet weak var buttonNegative: UIButton!
+    @IBOutlet weak var buttonDivide: UIButton!
+    @IBOutlet weak var buttonMultiply: UIButton!
+    @IBOutlet weak var buttonSubtract: UIButton!
+    @IBOutlet weak var buttonAdd: UIButton!
+    @IBOutlet weak var buttonEqual: UIButton!
+    @IBOutlet weak var buttonDecimal: UIButton!
+    @IBOutlet weak var button0: UIButton!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var button5: UIButton!
+    @IBOutlet weak var button6: UIButton!
+    @IBOutlet weak var button7: UIButton!
+    @IBOutlet weak var button8: UIButton!
+    @IBOutlet weak var button9: UIButton!
     
     var firstNumber = 0.0;
     var secondNumber = 0.0;
@@ -24,8 +42,7 @@ class ViewController: UIViewController {
     var tempOp = "none";
     var tempNum = 0.0;
     var allClear = 0;
-    var zeroCounter = 0 //not putting gay semicolin ;)
-
+    
     
     func doMath() {
         decimalPlace = numberLenghtTwo - numberLenghtOne - 1;
@@ -33,28 +50,28 @@ class ViewController: UIViewController {
             if (decimalSet == false){
                 if (operatorSet == "none"){
                     firstNumber = firstNumber * 10;
-            
+                    
                     if (firstNumber >= 0){
                         firstNumber = firstNumber + newNumber;
                     }
-            
+                    
                     if (firstNumber < 0){
                         firstNumber = firstNumber - newNumber;
                     }
-            
+                    
                     numberSelectedBool = false;
                     newNumber = 0.0;
                 }else{
                     secondNumber = secondNumber * 10;
-                
+                    
                     if (secondNumber >= 0){
                         secondNumber = secondNumber + newNumber;
                     }
-            
+                    
                     if (secondNumber < 0){
                         secondNumber = secondNumber - newNumber;
                     }
-            
+                    
                     numberSelectedBool = false;
                     newNumber = 0.0;
                 }
@@ -64,23 +81,23 @@ class ViewController: UIViewController {
                         if (firstNumber >= 0){
                             firstNumber = firstNumber + newNumber;
                         }
-                
+                        
                         if (firstNumber < 0){
                             firstNumber = firstNumber - newNumber;
                         }
-                
+                        
                         numberSelectedBool = false;
                         newNumber = 0.0;
                     }else{
-                
+                        
                         if (secondNumber >= 0){
                             secondNumber = secondNumber + newNumber;
                         }
-                
+                        
                         if (secondNumber < 0){
-                                secondNumber = secondNumber - newNumber;
-                            }
+                            secondNumber = secondNumber - newNumber;
                         }
+                    }
                 }else{
                     if (operatorSet == "none"){
                         if (firstNumber >= 0){
@@ -88,23 +105,23 @@ class ViewController: UIViewController {
                             firstNumber = firstNumber + newNumber;
                             firstNumber = firstNumber / pow(10.0, decimalPlace);
                         }
-                    
+                        
                         if (firstNumber < 0){
                             firstNumber = firstNumber * pow(10.0, decimalPlace);
                             firstNumber = firstNumber - newNumber;
                             firstNumber = firstNumber / pow(10.0, decimalPlace);
                         }
-                    
+                        
                         numberSelectedBool = false;
                         newNumber = 0.0;
                     }else{
-                    
+                        
                         if (secondNumber >= 0){
                             secondNumber = secondNumber * pow(10.0, decimalPlace);
                             secondNumber = secondNumber + newNumber;
                             secondNumber = secondNumber / pow(10.0, decimalPlace);
                         }
-                    
+                        
                         if (secondNumber < 0){
                             secondNumber = secondNumber * pow(10.0, decimalPlace);
                             secondNumber = secondNumber - newNumber;
@@ -114,7 +131,7 @@ class ViewController: UIViewController {
                 }
             }
             if (operatorSet != "none" && secondNumber != 0.0){
-            tempNum = secondNumber;
+                tempNum = secondNumber;
             }
             
             numberSelectedBool = false;
@@ -181,7 +198,7 @@ class ViewController: UIViewController {
                     firstNumber = firstNumber / secondNumber;
                 }
             }
-    
+            
             if (operatorSet == "*"){
                 if (secondNumber == 0.0){
                     firstNumber = firstNumber * firstNumber;
@@ -189,7 +206,7 @@ class ViewController: UIViewController {
                     firstNumber = firstNumber * secondNumber;
                 }
             }
-    
+            
             if (operatorSet == "-"){
                 if (secondNumber == 0.0){
                     firstNumber = firstNumber - firstNumber;
@@ -197,7 +214,7 @@ class ViewController: UIViewController {
                     firstNumber = firstNumber - secondNumber;
                 }
             }
-    
+            
             if (operatorSet == "+"){
                 if (secondNumber == 0.0){
                     firstNumber = firstNumber + firstNumber;
@@ -214,13 +231,13 @@ class ViewController: UIViewController {
         super.viewDidLoad();
         doRefresh();
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning();
         // Dispose of any resources that can be recreated.
     }
-
-//Start of button control
+    
+    //Start of button control
     
     @IBAction func buttonDecimalPressed() {
         if (decimalSet == false){
@@ -314,7 +331,7 @@ class ViewController: UIViewController {
         if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate();
             doRefresh();
-        
+            
         }
         operatorSet = "+";
         tempOp = "+";
@@ -329,7 +346,7 @@ class ViewController: UIViewController {
         operatorSet = "none";
         secondNumber = 0.0;
         doRefresh();
-        }
+    }
     
     @IBAction func button0Pressed() {
         newNumber = 0.0;
@@ -353,13 +370,13 @@ class ViewController: UIViewController {
         }
     }
     
-    func numberButtonPressed(numberOne: Double, numberTwo: Double) { //all numbers have the same function with different numbers, using one function with two arguments will cut down on
+    @IBAction func button1Pressed() {
         if (decimalSet == false){
-            newNumber = numberOne;
-            numberLenghtOne += numberOne;
-            numberLenghtTwo += numberOne;
+            newNumber = 1.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
         }else{
-            newNumber = numberTwo;
+            newNumber = 0.1;
             numberLenghtTwo += 1.0;
         }
         
@@ -367,42 +384,133 @@ class ViewController: UIViewController {
         numberSelectedBool = true;
         doMath();
         doRefresh();
-        zeroCounter = 0
-    }
-    
-    @IBAction func button1Pressed() {
-        numberButtonPressed(1.0, numberTwo: 0.1)
     }
     
     @IBAction func button2Pressed() {
-        numberButtonPressed(2.0, numberTwo: 0.2)
+        if (decimalSet == false){
+            newNumber = 2.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.2;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
     
     @IBAction func button3Pressed() {
-        numberButtonPressed(3.0, numberTwo: 0.3)
+        if (decimalSet == false){
+            newNumber = 3.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.3;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
     
     @IBAction func button4Pressed() {
-        numberButtonPressed(4.0, numberTwo: 0.4)
+        if (decimalSet == false){
+            newNumber = 4.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.4;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
     
     @IBAction func button5Pressed() {
-        numberButtonPressed(5.0, numberTwo: 0.5)
+        if (decimalSet == false){
+            newNumber = 5.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.5;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
     
     @IBAction func button6Pressed() {
-        numberButtonPressed(6.0, numberTwo: 0.6)
+        if (decimalSet == false){
+            newNumber = 6.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.6;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
     
     @IBAction func button7Pressed() {
-        numberButtonPressed(7.0, numberTwo: 0.7)
+        if (decimalSet == false){
+            newNumber = 7.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.7;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
     
     @IBAction func button8Pressed() {
-        numberButtonPressed(8.0, numberTwo: 0.8)
+        if (decimalSet == false){
+            newNumber = 8.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.8;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
     
     @IBAction func button9Pressed() {
-        numberButtonPressed(9.0, numberTwo: 0.9)
+        if (decimalSet == false){
+            newNumber = 9.0;
+            numberLenghtOne += 1.0;
+            numberLenghtTwo += 1.0;
+        }else{
+            newNumber = 0.9;
+            numberLenghtTwo += 1.0;
+        }
+        
+        allClear = 0;
+        numberSelectedBool = true;
+        doMath();
+        doRefresh();
     }
 }
