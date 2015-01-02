@@ -174,9 +174,7 @@ class ViewController: UIViewController {
     }
     
     func doCalculate() {
-        
         if (operatorSet == "none"){
-            
             if (tempOp == "/"){
                 firstNumber = firstNumber / tempNum;
             }
@@ -193,9 +191,7 @@ class ViewController: UIViewController {
                 firstNumber = firstNumber + tempNum;
             }
         }else{
-        
             if (operatorSet == "/"){
-                
                 if (secondNumber == 0.0){
                     firstNumber = firstNumber / firstNumber;
                 }else{
@@ -204,7 +200,6 @@ class ViewController: UIViewController {
             }
     
             if (operatorSet == "*"){
-                
                 if (secondNumber == 0.0){
                     firstNumber = firstNumber * firstNumber;
                 }else{
@@ -213,7 +208,6 @@ class ViewController: UIViewController {
             }
     
             if (operatorSet == "-"){
-                
                 if (secondNumber == 0.0){
                     firstNumber = firstNumber - firstNumber;
                 }else{
@@ -222,7 +216,6 @@ class ViewController: UIViewController {
             }
     
             if (operatorSet == "+"){
-                
                 if (secondNumber == 0.0){
                     firstNumber = firstNumber + firstNumber;
                 }else{
