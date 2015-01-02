@@ -9,25 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var labelAnswer: UILabel! //declare UI objects
-    @IBOutlet weak var buttonClear: UIButton!
-    @IBOutlet weak var buttonNegative: UIButton!
-    @IBOutlet weak var buttonDivide: UIButton!
-    @IBOutlet weak var buttonMultiply: UIButton!
-    @IBOutlet weak var buttonSubtract: UIButton!
-    @IBOutlet weak var buttonAdd: UIButton!
-    @IBOutlet weak var buttonEqual: UIButton!
-    @IBOutlet weak var buttonDecimal: UIButton!
-    @IBOutlet weak var button0: UIButton!
-    @IBOutlet weak var button1: UIButton!
-    @IBOutlet weak var button2: UIButton!
-    @IBOutlet weak var button3: UIButton!
-    @IBOutlet weak var button4: UIButton!
-    @IBOutlet weak var button5: UIButton!
-    @IBOutlet weak var button6: UIButton!
-    @IBOutlet weak var button7: UIButton!
-    @IBOutlet weak var button8: UIButton!
-    @IBOutlet weak var button9: UIButton!
+    @IBOutlet weak var labelAnswer: UILabel!
     
     var firstNumber = 0.0;
     var secondNumber = 0.0;
@@ -42,6 +24,7 @@ class ViewController: UIViewController {
     var tempOp = "none";
     var tempNum = 0.0;
     var allClear = 0;
+    var zeroCounter = 0 //not putting gay semicolin ;)
 
     
     func doMath() {
@@ -370,13 +353,13 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func button1Pressed() {
+    func numberButtonPressed(numberOne: Double, numberTwo: Double) { //all numbers have the same function with different numbers, using one function with two arguments will cut down on
         if (decimalSet == false){
-            newNumber = 1.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
+            newNumber = numberOne;
+            numberLenghtOne += numberOne;
+            numberLenghtTwo += numberOne;
         }else{
-            newNumber = 0.1;
+            newNumber = numberTwo;
             numberLenghtTwo += 1.0;
         }
         
@@ -384,133 +367,42 @@ class ViewController: UIViewController {
         numberSelectedBool = true;
         doMath();
         doRefresh();
+        zeroCounter = 0
+    }
+    
+    @IBAction func button1Pressed() {
+        numberButtonPressed(1.0, numberTwo: 0.1)
     }
     
     @IBAction func button2Pressed() {
-        if (decimalSet == false){
-            newNumber = 2.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.2;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(2.0, numberTwo: 0.2)
     }
     
     @IBAction func button3Pressed() {
-        if (decimalSet == false){
-            newNumber = 3.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.3;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(3.0, numberTwo: 0.3)
     }
     
     @IBAction func button4Pressed() {
-        if (decimalSet == false){
-            newNumber = 4.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.4;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(4.0, numberTwo: 0.4)
     }
     
     @IBAction func button5Pressed() {
-        if (decimalSet == false){
-            newNumber = 5.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.5;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(5.0, numberTwo: 0.5)
     }
     
     @IBAction func button6Pressed() {
-        if (decimalSet == false){
-            newNumber = 6.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.6;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(6.0, numberTwo: 0.6)
     }
     
     @IBAction func button7Pressed() {
-        if (decimalSet == false){
-            newNumber = 7.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.7;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(7.0, numberTwo: 0.7)
     }
     
     @IBAction func button8Pressed() {
-        if (decimalSet == false){
-            newNumber = 8.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.8;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(8.0, numberTwo: 0.8)
     }
     
     @IBAction func button9Pressed() {
-        if (decimalSet == false){
-            newNumber = 9.0;
-            numberLenghtOne += 1.0;
-            numberLenghtTwo += 1.0;
-        }else{
-            newNumber = 0.9;
-            numberLenghtTwo += 1.0;
-        }
-        
-        allClear = 0;
-        numberSelectedBool = true;
-        doMath();
-        doRefresh();
+        numberButtonPressed(9.0, numberTwo: 0.9)
     }
 }
