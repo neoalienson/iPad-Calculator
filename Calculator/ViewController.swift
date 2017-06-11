@@ -145,8 +145,8 @@ class ViewController: UIViewController {
         
         
         if (operatorSet == "none"){
-            var floatNumberBefore = Float(firstNumber);
-            var floatNumberAfter = Float(firstNumberNoDec);
+            let floatNumberBefore = Float(firstNumber);
+            let floatNumberAfter = Float(firstNumberNoDec);
             
             if firstNumber >= 9999999999.0{
                 
@@ -165,8 +165,8 @@ class ViewController: UIViewController {
 
             }
         }else{
-            var floatNumberBefore = Float(secondNumber);
-            var floatNumberAfter = Float(secondNumberNoDec);
+            let floatNumberBefore = Float(secondNumber);
+            let floatNumberAfter = Float(secondNumberNoDec);
             
             if secondNumber >= 9999999999.0{
                 
