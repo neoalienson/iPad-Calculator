@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13122.17" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13034"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="CalculatorWatch" customModuleProvider="target">
+                    <items>
+                        <group width="0.0" height="32" alignment="left" id="Db8-nS-2Fl">
+                            <items>
+                                <label width="0.80000000000000004" alignment="left" text="0" textAlignment="right" id="bNe-UE-eLo"/>
+                                <button width="32" height="1" alignment="left" title="C" id="GeB-Tq-Gay"/>
+                            </items>
+                        </group>
+                        <group width="1" height="32" alignment="left" id="cpa-06-TW4">
+                            <items>
+                                <button width="32" height="1" alignment="left" title="7" id="ZaY-68-Wku"/>
+                                <button width="32" height="1" alignment="left" title="8" id="GmC-MJ-suK"/>
+                                <button width="32" height="1" alignment="left" title="9" id="Tp6-ah-0yH"/>
+                                <button width="32" height="1" alignment="left" title="÷" id="lph-is-DmI"/>
+                            </items>
+                        </group>
+                        <group width="1" height="32" alignment="left" id="ZYE-ab-pFX">
+                            <items>
+                                <button width="32" height="1" alignment="left" title="4" id="VeM-oH-eNZ"/>
+                                <button width="32" height="1" alignment="left" title="5" id="hBB-7p-uDz"/>
+                                <button width="32" height="1" alignment="left" title="6" id="SDD-WB-4Jv"/>
+                                <button width="32" height="1" alignment="left" title="x" id="iUm-6z-Abw"/>
+                            </items>
+                        </group>
+                        <group width="1" height="32" alignment="left" id="TSl-TV-ta4">
+                            <items>
+                                <button width="32" height="1" alignment="left" title="1" id="4G2-RT-Uei"/>
+                                <button width="32" height="1" alignment="left" title="2" id="yDX-bg-DAF"/>
+                                <button width="32" height="1" alignment="left" title="3" id="gqF-dS-ekZ"/>
+                                <button width="32" height="1" alignment="left" title="-" id="fpv-7i-ZGQ"/>
+                            </items>
+                        </group>
+                        <group width="1" height="32" alignment="left" id="F6I-7L-eHH">
+                            <items>
+                                <button width="32" height="1" alignment="left" title="0" id="eVU-UD-BHP"/>
+                                <button width="32" height="1" alignment="left" title="." id="RSc-Hx-9F6"/>
+                                <button width="32" height="1" alignment="left" title="=" id="jnl-ma-Wdh"/>
+                                <button width="32" height="1" alignment="left" title="+" id="AVt-te-Ic3"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="button0" destination="eVU-UD-BHP" id="arh-WY-Ene"/>
+                        <outlet property="button1" destination="4G2-RT-Uei" id="Um3-iO-y7Z"/>
+                        <outlet property="button2" destination="yDX-bg-DAF" id="QBC-rk-3zY"/>
+                        <outlet property="button3" destination="gqF-dS-ekZ" id="ko6-HY-knQ"/>
+                        <outlet property="button4" destination="VeM-oH-eNZ" id="SST-Bd-B8a"/>
+                        <outlet property="button5" destination="hBB-7p-uDz" id="1FF-2d-fto"/>
+                        <outlet property="button6" destination="SDD-WB-4Jv" id="ny7-bL-nBy"/>
+                        <outlet property="button7" destination="ZaY-68-Wku" id="Ng9-IK-9Sl"/>
+                        <outlet property="button8" destination="GmC-MJ-suK" id="Sze-VJ-IKO"/>
+                        <outlet property="button9" destination="Tp6-ah-0yH" id="qhS-4y-OTq"/>
+                        <outlet property="buttonAdd" destination="AVt-te-Ic3" id="96i-wV-MNc"/>
+                        <outlet property="buttonClear" destination="GeB-Tq-Gay" id="SBd-vc-9D7"/>
+                        <outlet property="buttonDecimal" destination="RSc-Hx-9F6" id="yQO-Od-ILB"/>
+                        <outlet property="buttonDivide" destination="lph-is-DmI" id="EPg-AH-Vbp"/>
+                        <outlet property="buttonEqual" destination="jnl-ma-Wdh" id="azL-5X-gGr"/>
+                        <outlet property="buttonMultiply" destination="iUm-6z-Abw" id="6si-JI-OHe"/>
+                        <outlet property="buttonSubtract" destination="fpv-7i-ZGQ" id="d3r-5i-Fqo"/>
+                        <outlet property="labelAnswer" destination="bNe-UE-eLo" id="hri-tG-WYg"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
