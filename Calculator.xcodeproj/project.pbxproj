@@ -440,7 +440,7 @@
 					047C559D19F2125C0037BF5D = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 37J588435Y;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 					};
 					047C55B219F2125C0037BF5D = {
 						CreatedOnToolsVersion = 6.1;
@@ -450,6 +450,7 @@
 					B57EFF681EED8027007D6ED1 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 37J588435Y;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 047C559D19F2125C0037BF5D;
 					};
@@ -460,6 +461,7 @@
 					B5F0FA971EF3FBDA001E4C81 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 37J588435Y;
+						LastSwiftMigration = 0900;
 					};
 					B5F0FADB1EF412D9001E4C81 = {
 						CreatedOnToolsVersion = 9.0;
@@ -469,6 +471,7 @@
 					B5F0FAE31EF412D9001E4C81 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 37J588435Y;
+						LastSwiftMigration = 0900;
 						TestTargetID = 047C559D19F2125C0037BF5D;
 					};
 				};
@@ -753,7 +756,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.padblish.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -769,7 +773,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.padblish.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -828,7 +833,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.padblish.CalculatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Calculator;
 			};
 			name = Debug;
@@ -851,7 +857,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.padblish.CalculatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Calculator;
 			};
 			name = Release;
@@ -884,6 +891,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
@@ -918,6 +926,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
@@ -1032,6 +1041,7 @@
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos watchsimulator watchos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1074,6 +1084,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos watchsimulator watchos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1108,6 +1119,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.padblish.CalculatorCommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
@@ -1141,6 +1153,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.padblish.CalculatorCommonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
