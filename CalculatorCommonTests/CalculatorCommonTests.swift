@@ -1,15 +1,15 @@
 //
-//  CalculatorTests.swift
-//  CalculatorTests
+//  CalculatorCommonTests.swift
+//  CalculatorCommonTests
 //
-//  Created by Jack Vaughn on 10/17/14.
-//  Copyright (c) 2014 Treehouse. All rights reserved.
+//  Created by Neo on 6/16/17.
+//  Copyright © 2017 Treehouse. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import CalculatorCommon
 
-class CalculatorTests: XCTestCase {
+class CalculatorCommonTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -23,12 +23,12 @@ class CalculatorTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure() {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

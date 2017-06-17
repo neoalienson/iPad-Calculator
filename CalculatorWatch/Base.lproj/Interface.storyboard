@@ -16,40 +16,108 @@
                     <items>
                         <group width="0.0" height="32" alignment="left" id="Db8-nS-2Fl">
                             <items>
-                                <label width="0.80000000000000004" alignment="left" text="0" textAlignment="right" id="bNe-UE-eLo"/>
-                                <button width="32" height="1" alignment="left" title="C" id="GeB-Tq-Gay"/>
+                                <label width="0.80000000000000004" height="1" alignment="left" text="0" textAlignment="right" baselineAdjustment="alignCenters" id="bNe-UE-eLo"/>
+                                <button width="32" height="1" alignment="left" title="C" id="GeB-Tq-Gay">
+                                    <connections>
+                                        <action selector="buttonClearPressed" destination="AgC-eL-Hgc" id="UaS-yF-goN"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                         <group width="1" height="32" alignment="left" id="cpa-06-TW4">
                             <items>
-                                <button width="32" height="1" alignment="left" title="7" id="ZaY-68-Wku"/>
-                                <button width="32" height="1" alignment="left" title="8" id="GmC-MJ-suK"/>
-                                <button width="32" height="1" alignment="left" title="9" id="Tp6-ah-0yH"/>
-                                <button width="32" height="1" alignment="left" title="÷" id="lph-is-DmI"/>
+                                <button width="32" height="1" alignment="left" title="7" id="ZaY-68-Wku">
+                                    <connections>
+                                        <action selector="button7Pressed" destination="AgC-eL-Hgc" id="1fB-Cx-Wde"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="8" id="GmC-MJ-suK">
+                                    <connections>
+                                        <action selector="button8Pressed" destination="AgC-eL-Hgc" id="cRx-it-MND"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="9" id="Tp6-ah-0yH">
+                                    <connections>
+                                        <action selector="button9Pressed" destination="AgC-eL-Hgc" id="7zl-Md-7qc"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="÷" id="lph-is-DmI">
+                                    <connections>
+                                        <action selector="buttonDividePressed" destination="AgC-eL-Hgc" id="Bzp-pH-0D8"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                         <group width="1" height="32" alignment="left" id="ZYE-ab-pFX">
                             <items>
-                                <button width="32" height="1" alignment="left" title="4" id="VeM-oH-eNZ"/>
-                                <button width="32" height="1" alignment="left" title="5" id="hBB-7p-uDz"/>
-                                <button width="32" height="1" alignment="left" title="6" id="SDD-WB-4Jv"/>
-                                <button width="32" height="1" alignment="left" title="x" id="iUm-6z-Abw"/>
+                                <button width="32" height="1" alignment="left" title="4" id="VeM-oH-eNZ">
+                                    <connections>
+                                        <action selector="button4Pressed" destination="AgC-eL-Hgc" id="Y4T-wI-u1V"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="5" id="hBB-7p-uDz">
+                                    <connections>
+                                        <action selector="button5Pressed" destination="AgC-eL-Hgc" id="Qmd-Y0-iVN"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="6" id="SDD-WB-4Jv">
+                                    <connections>
+                                        <action selector="button6Pressed" destination="AgC-eL-Hgc" id="msK-T5-jmY"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="x" id="iUm-6z-Abw">
+                                    <connections>
+                                        <action selector="buttonMultiplyPressed" destination="AgC-eL-Hgc" id="S9f-tt-9XY"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                         <group width="1" height="32" alignment="left" id="TSl-TV-ta4">
                             <items>
-                                <button width="32" height="1" alignment="left" title="1" id="4G2-RT-Uei"/>
-                                <button width="32" height="1" alignment="left" title="2" id="yDX-bg-DAF"/>
-                                <button width="32" height="1" alignment="left" title="3" id="gqF-dS-ekZ"/>
-                                <button width="32" height="1" alignment="left" title="-" id="fpv-7i-ZGQ"/>
+                                <button width="32" height="1" alignment="left" title="1" id="4G2-RT-Uei">
+                                    <connections>
+                                        <action selector="button1Pressed" destination="AgC-eL-Hgc" id="GXy-Hc-elL"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="2" id="yDX-bg-DAF">
+                                    <connections>
+                                        <action selector="button2Pressed" destination="AgC-eL-Hgc" id="PS0-jR-4Ne"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="3" id="gqF-dS-ekZ">
+                                    <connections>
+                                        <action selector="button3Pressed" destination="AgC-eL-Hgc" id="nMl-To-3mv"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="-" id="fpv-7i-ZGQ">
+                                    <connections>
+                                        <action selector="buttonSubtractPressed" destination="AgC-eL-Hgc" id="X7D-vx-4mw"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                         <group width="1" height="32" alignment="left" id="F6I-7L-eHH">
                             <items>
-                                <button width="32" height="1" alignment="left" title="0" id="eVU-UD-BHP"/>
-                                <button width="32" height="1" alignment="left" title="." id="RSc-Hx-9F6"/>
-                                <button width="32" height="1" alignment="left" title="=" id="jnl-ma-Wdh"/>
-                                <button width="32" height="1" alignment="left" title="+" id="AVt-te-Ic3"/>
+                                <button width="32" height="1" alignment="left" title="0" id="eVU-UD-BHP">
+                                    <connections>
+                                        <action selector="button0Pressed" destination="AgC-eL-Hgc" id="pf8-2l-bbJ"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="." id="RSc-Hx-9F6">
+                                    <connections>
+                                        <action selector="buttonDecimalPressed" destination="AgC-eL-Hgc" id="Cum-In-gEE"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="=" id="jnl-ma-Wdh">
+                                    <connections>
+                                        <action selector="buttonEqualPressed" destination="AgC-eL-Hgc" id="VHu-99-N5l"/>
+                                    </connections>
+                                </button>
+                                <button width="32" height="1" alignment="left" title="+" id="AVt-te-Ic3">
+                                    <connections>
+                                        <action selector="buttonAddPressed" destination="AgC-eL-Hgc" id="nry-vY-OfY"/>
+                                    </connections>
+                                </button>
                             </items>
                         </group>
                     </items>
