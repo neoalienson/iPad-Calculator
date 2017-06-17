@@ -28,7 +28,7 @@ class Calculator {
         return answer
     }
     
-    func decimalPressed() -> String {
+    @discardableResult func decimalPressed() -> String {
         if (decimalSet == false){
             decimalSet = true
             doRefresh()
@@ -37,7 +37,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func negativePressed() -> String {
+    @discardableResult func negativePressed() -> String {
         newNumber = -1.0
         numberSelectedBool = true
         
@@ -54,7 +54,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func dividePressed() -> String {
+    @discardableResult func dividePressed() -> String {
         if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate()
             doRefresh()
@@ -75,7 +75,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func multiplyPressed() -> String {
+    @discardableResult func multiplyPressed() -> String {
         if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate()
             doRefresh()
@@ -96,7 +96,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func subtractPressed() -> String {
+    @discardableResult func subtractPressed() -> String {
         if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate()
             doRefresh()
@@ -117,7 +117,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func clearPressed() -> String {
+    @discardableResult func clearPressed() -> String {
         if (operatorSet == "none"){
             firstNumber = 0.0
             allClear = 1
@@ -139,7 +139,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func equalPressed() -> String {
+    @discardableResult func equalPressed() -> String {
         doCalculate()
         operatorSet = "none"
         secondNumber = 0.0
@@ -149,7 +149,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func addPressed() -> String {
+    @discardableResult func addPressed() -> String {
         if (operatorSet != "none" && secondNumber != 0.0){
             doCalculate()
             doRefresh()
@@ -170,7 +170,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func zeroPressed() -> String {
+    @discardableResult func zeroPressed() -> String {
         newNumber = 0.0
         numberSelectedBool = true
         if (decimalSet == false){
@@ -200,7 +200,7 @@ class Calculator {
         return getAnswer()
     }
     
-    func digitPressed(digit : Double) -> String {
+    @discardableResult func digitPressed(digit : Double) -> String {
         if (decimalSet == false){
             newNumber = digit
             numberLenghtOne += 1.0
