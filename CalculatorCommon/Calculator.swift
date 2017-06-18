@@ -9,6 +9,7 @@
 import Foundation
 
 class Calculator {
+    private var screenWidth : Int;
     private var answer = "0"
     private var firstNumber = 0.0
     private var secondNumber = 0.0
@@ -24,9 +25,18 @@ class Calculator {
     private var allClear = 0
     private var equalSet = false
     
+    init(screenWidth : Int = 16) {
+        self.screenWidth = screenWidth
+    }
+    
+    func getScreenWidth() -> Int {
+        return screenWidth
+    }
+    
     func getAnswer() -> String {
         return answer
     }
+    
     
     @discardableResult func decimalPressed() -> String {
         if (decimalSet == false){
