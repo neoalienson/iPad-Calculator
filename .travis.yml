@@ -2,4 +2,4 @@ language: objective-c
 xcode_project: Calculator.xcodeproj
 osx_image: xcode8.3
 xcode_sdk: iphonesimulator10.3
-scheme: Calculator
+xcode_scheme: Calculator
