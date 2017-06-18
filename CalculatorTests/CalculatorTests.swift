@@ -151,6 +151,38 @@ class CalculatorTests: XCTestCase {
         XCTAssertEqual("3", cal.equalPressed())
     }
     
+    func testAddOperator() {
+        let cal = Calculator()
+        cal.digitPressed(digit: 1.0)
+        cal.addPressed()
+        cal.digitPressed(digit: 2.0)
+        XCTAssertEqual("3", cal.addPressed())
+    }
+    
+    func testSubstractOperator() {
+        let cal = Calculator()
+        cal.digitPressed(digit: 9.0)
+        cal.subtractPressed()
+        cal.digitPressed(digit: 8.0)
+        XCTAssertEqual("1", cal.subtractPressed())
+    }
+    
+    func testMultiplyOperator() {
+        let cal = Calculator()
+        cal.digitPressed(digit: 3.0)
+        cal.multiplyPressed()
+        cal.digitPressed(digit: 2.0)
+        XCTAssertEqual("6", cal.multiplyPressed())
+    }
+    
+    func testDivideOperator() {
+        let cal = Calculator()
+        cal.digitPressed(digit: 6.0)
+        cal.dividePressed()
+        cal.digitPressed(digit: 2.0)
+        XCTAssertEqual("3", cal.dividePressed())
+    }
+    
     func testRoundUp() {
         let cal = Calculator(screenWidth: 3)
         cal.digitPressed(digit: 1.0)
