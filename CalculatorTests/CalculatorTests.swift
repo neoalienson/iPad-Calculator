@@ -117,6 +117,11 @@ class CalculatorTests: XCTestCase {
         let cal = Calculator()
         cal.decimalPressed()
         XCTAssertEqual("0.1", cal.digitPressed(digit: 1.0))
+        XCTAssertEqual("0.12", cal.digitPressed(digit: 2.0))
+        XCTAssertEqual("0.12", cal.decimalPressed())
+        XCTAssertEqual("0.120", cal.zeroPressed())
+        XCTAssertEqual("0.120", cal.decimalPressed())
+        XCTAssertEqual("0.1203", cal.digitPressed(digit: 3.0))
     }
     
     func testAdd() {
