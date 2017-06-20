@@ -61,17 +61,27 @@ class Calculator {
     
     @discardableResult func dividePressed() -> String {
         self.op = .Divide
+        
+        stash = result
+        result = 0
+        
         return getAnswer()
     }
     
     @discardableResult func multiplyPressed() -> String {
         self.op = .Multiply
         
+        stash = result
+        result = 0
+        
         return getAnswer()
     }
     
     @discardableResult func subtractPressed() -> String {
         self.op = .Subtract
+        
+        stash = result
+        result = 0
         
         return getAnswer()
     }
@@ -83,6 +93,21 @@ class Calculator {
     }
     
     @discardableResult func equalPressed() -> String {
+        switch self.op {
+        case .Add:
+            result += self.stash
+        case .Subtract:
+            result = self.stash - result
+        case .Multiply:
+            result *= self.stash
+        case .Divide:
+            result /= self.stash
+        default:
+            break
+        }
+        
+        self.stash = 0
+        
         self.op = .None
         
         return getAnswer()
@@ -90,11 +115,18 @@ class Calculator {
     
     @discardableResult func addPressed() -> String {
         self.op = .Add
+        stash = result
+        result = 0
         
         return getAnswer()
     }
     
     @discardableResult func zeroPressed() -> String {
+        if (decimalSet) {
+            decimalPlace += 1
+        } else {
+            result *= 10
+        }
         
         return getAnswer()
     }
