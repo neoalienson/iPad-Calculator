@@ -127,7 +127,7 @@ class CalculatorTests: XCTestCase {
     func testAdd() {
         let cal = Calculator()
         cal.digitPressed(digit: 1.0)
-        cal.addPressed()
+        XCTAssertEqual("1", cal.addPressed())
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("3", cal.equalPressed())
     }
@@ -135,7 +135,7 @@ class CalculatorTests: XCTestCase {
     func testSubstract() {
         let cal = Calculator()
         cal.digitPressed(digit: 9.0)
-        cal.subtractPressed()
+        XCTAssertEqual("9", cal.subtractPressed())
         cal.digitPressed(digit: 8.0)
         XCTAssertEqual("1", cal.equalPressed())
     }
@@ -143,7 +143,7 @@ class CalculatorTests: XCTestCase {
     func testMultiply() {
         let cal = Calculator()
         cal.digitPressed(digit: 3.0)
-        cal.multiplyPressed()
+        XCTAssertEqual("3", cal.multiplyPressed())
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("6", cal.equalPressed())
     }
@@ -151,7 +151,7 @@ class CalculatorTests: XCTestCase {
     func testDivide() {
         let cal = Calculator()
         cal.digitPressed(digit: 6.0)
-        cal.dividePressed()
+        XCTAssertEqual("6", cal.dividePressed())
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("3", cal.equalPressed())
     }
