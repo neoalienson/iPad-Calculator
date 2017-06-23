@@ -12,103 +12,99 @@ enum Operator {
     case None, Add, Subtract, Multiply, Divide
 }
 
+class CalculatorState {
+    var display = 0.0
+    var screenWidth : Int = 16
+    var decimalStart = false
+    var decimalSet = false
+    var decimalPlace = 0
+    var stash = 0.0
+    var current = 0.0
+    var op = Operator.None
+    
+    
+}
+
 class Calculator {
-    private var display = 0.0
-    private var screenWidth : Int
-    private var decimalStart = false
-    private var decimalSet = false
-    private var decimalPlace = 0
-    private var stash = 0.0
-    private var current = 0.0
-    private var op = Operator.None
+    private var state = CalculatorState()
     
     init(screenWidth : Int = 16) {
-        self.screenWidth = screenWidth
+        state.screenWidth = screenWidth
     }
     
     func getScreenWidth() -> Int {
-        return screenWidth
+        return state.screenWidth
     }
     
     func getDisplay() -> String {
-        if (decimalStart) {
-            return "\(display)."
+        if (state.decimalStart) {
+            return "\(state.display)."
         } else {
-            if (display.truncatingRemainder(dividingBy: 1.0) > 0) {
-                var str = String(format: "%f", display)
+            if (state.display.truncatingRemainder(dividingBy: 1.0) > 0) {
+                var str = String(format: "%f", state.display)
                 str = str.trimmingCharacters(in: CharacterSet(charactersIn: "0"))
                 return str
             } else {
-                return "\(display)".replacingOccurrences(of: ".0", with: "")
+                return "\(state.display)".replacingOccurrences(of: ".0", with: "")
             }
         }
     }
     
     private func reset() {
-        self.current = 0.0
-        self.display = 0.0
-        self.op = .None
-        self.decimalStart = false
-        self.decimalSet = false
-        self.decimalPlace = 0
+        state.current = 0.0
+        state.display = 0.0
+        state.op = .None
+        state.decimalStart = false
+        state.decimalSet = false
+        state.decimalPlace = 0
     }
     
     @discardableResult func decimalPressed() -> String {
-        if (decimalSet == false){
-            decimalSet = true
+        if (state.decimalSet == false){
+            state.decimalSet = true
         }
         
         return getDisplay()
     }
     
     @discardableResult func negativePressed() -> String {
-        current *= -1
-        display = current
+        state.current *= -1
+        state.display = state.current
         
         return getDisplay()
     }
     
+    private func updateState() {
+        state.stash = state.current
+        state.display = state.current
+        state.current = 0
+    }
+    
     @discardableResult func dividePressed() -> String {
         resolve()
-        
-        self.op = .Divide
-        stash = current
-        display = current
-        current = 0
-        
+        state.op = .Divide
+        updateState()
         return getDisplay()
     }
     
     @discardableResult func multiplyPressed() -> String {
         resolve()
-        
-        self.op = .Multiply
-        stash = current
-        display = current
-        current = 0
-        
+        state.op = .Multiply
+        updateState()
         return getDisplay()
     }
     
     @discardableResult func subtractPressed() -> String {
         resolve()
-        
-        self.op = .Subtract
-        stash = current
-        display = current
-        current = 0
-        
+        state.op = .Subtract
+        updateState()
         return getDisplay()
     }
     
     @discardableResult func addPressed() -> String {
         resolve()
-        
-        self.op = .Add
-        stash = current
-        display = current
-        current = 0
-        
+        state.op = .Add
+        updateState()
         return getDisplay()
     }
     
@@ -119,54 +115,54 @@ class Calculator {
     }
     
     private func resolve() {
-        switch self.op {
+        switch state.op {
         case .None:
             return
         case .Add:
-            current += self.stash
+            state.current += state.stash
         case .Subtract:
-            current = self.stash - current
+            state.current = state.stash - state.current
         case .Multiply:
-            current *= self.stash
+            state.current *= state.stash
         case .Divide:
-            current = self.stash / current
+            state.current = state.stash / state.current
         }
         
-        self.stash = 0
-        self.op = .None
+        state.stash = 0
+        state.op = .None
     }
     
     @discardableResult func equalPressed() -> String {
         resolve()
         
-        display = current
+        state.display = state.current
         
         return getDisplay()
     }
     
     @discardableResult func zeroPressed() -> String {
-        if (decimalSet) {
-            decimalPlace += 1
+        if (state.decimalSet) {
+            state.decimalPlace += 1
         } else {
-            current *= 10
+            state.current *= 10
         }
         
-        display = current
+        state.display = state.current
         
         return getDisplay()
     }
     
     @discardableResult func digitPressed(digit : Double) -> String {
-        if (decimalSet) {
-            decimalPlace += 1
-            let pad = digit * pow(10, Double(decimalPlace * -1))
-            current += pad
+        if (state.decimalSet) {
+            state.decimalPlace += 1
+            let pad = digit * pow(10, Double(state.decimalPlace * -1))
+            state.current += pad
         } else {
-            current *= 10
-            current += digit
+            state.current *= 10
+            state.current += digit
         }
         
-        display = current
+        state.display = state.current
         
         return getDisplay()
     }
