@@ -13,12 +13,13 @@ enum Operator {
 }
 
 class Calculator {
+    private var display = 0.0
     private var screenWidth : Int
     private var decimalStart = false
     private var decimalSet = false
     private var decimalPlace = 0
     private var stash = 0.0
-    private var result = 0.0
+    private var current = 0.0
     private var op = Operator.None
     
     init(screenWidth : Int = 16) {
@@ -29,16 +30,17 @@ class Calculator {
         return screenWidth
     }
     
-    func getAnswer() -> String {
+    func getDisplay() -> String {
         if (decimalStart) {
-            return "\(result)."
+            return "\(display)."
         } else {
-            return "\(result)".replacingOccurrences(of: ".0", with: "")
+            return "\(display)".replacingOccurrences(of: ".0", with: "")
         }
     }
     
     private func reset() {
-        self.result = 0.0
+        self.current = 0.0
+        self.display = 0.0
         self.op = .None
         self.decimalStart = false
         self.decimalSet = false
@@ -50,96 +52,116 @@ class Calculator {
             decimalSet = true
         }
         
-        return getAnswer()
+        return getDisplay()
     }
     
     @discardableResult func negativePressed() -> String {
-        result *= -1
+        current *= -1
+        display = current
         
-        return getAnswer()
+        return getDisplay()
     }
     
     @discardableResult func dividePressed() -> String {
+        resolve()
+        
         self.op = .Divide
+        stash = current
+        display = current
+        current = 0
         
-        stash = result
-        result = 0
-        
-        return getAnswer()
+        return getDisplay()
     }
     
     @discardableResult func multiplyPressed() -> String {
+        resolve()
+        
         self.op = .Multiply
+        stash = current
+        display = current
+        current = 0
         
-        stash = result
-        result = 0
-        
-        return getAnswer()
+        return getDisplay()
     }
     
     @discardableResult func subtractPressed() -> String {
+        resolve()
+        
         self.op = .Subtract
+        stash = current
+        display = current
+        current = 0
         
-        stash = result
-        result = 0
+        return getDisplay()
+    }
+    
+    @discardableResult func addPressed() -> String {
+        resolve()
         
-        return getAnswer()
+        self.op = .Add
+        stash = current
+        display = current
+        current = 0
+        
+        return getDisplay()
     }
     
     @discardableResult func clearPressed() -> String {
         reset()
         
-        return getAnswer()
+        return getDisplay()
     }
     
-    @discardableResult func equalPressed() -> String {
+    private func resolve() {
         switch self.op {
+        case .None:
+            return
         case .Add:
-            result += self.stash
+            current += self.stash
         case .Subtract:
-            result = self.stash - result
+            current = self.stash - current
         case .Multiply:
-            result *= self.stash
+            current *= self.stash
         case .Divide:
-            result /= self.stash
-        default:
-            break
+            current = self.stash / current
         }
         
         self.stash = 0
-        
         self.op = .None
-        
-        return getAnswer()
     }
     
-    @discardableResult func addPressed() -> String {
-        self.op = .Add
-        stash = result
-        result = 0
+    @discardableResult func equalPressed() -> String {
+        resolve()
         
-        return getAnswer()
+        display = current
+        
+        return getDisplay()
     }
     
     @discardableResult func zeroPressed() -> String {
         if (decimalSet) {
             decimalPlace += 1
         } else {
-            result *= 10
+            current *= 10
         }
         
-        return getAnswer()
+        display = current
+        
+        return getDisplay()
     }
     
     @discardableResult func digitPressed(digit : Double) -> String {
         if (decimalSet) {
             decimalPlace += 1
             let pad = digit * pow(10, Double(decimalPlace * -1))
-            result += pad
+            current += pad
         } else {
-            result *= 10
-            result += digit
+            current *= 10
+            current += digit
         }
-        return getAnswer()
+        
+        display = current
+        
+        return getDisplay()
     }
 }

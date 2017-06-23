@@ -30,7 +30,7 @@ class CalculatorTests: XCTestCase {
         cal.digitPressed(digit: 2.0)
         cal.digitPressed(digit: 1.0)
         cal.zeroPressed()
-        XCTAssertEqual("9876543210", cal.getAnswer())
+        XCTAssertEqual("9876543210", cal.getDisplay())
     }
     
     func testScreenWidth() {
@@ -55,7 +55,7 @@ class CalculatorTests: XCTestCase {
         cal.digitPressed(digit: 8.0)
         cal.digitPressed(digit: 9.0)
         cal.zeroPressed()
-        XCTAssertEqual(cal.getScreenWidth(), cal.getAnswer().count)
+        XCTAssertEqual(cal.getScreenWidth(), cal.getDisplay().count)
     }
     
     func testScreenWidthWithDecimal() {
@@ -81,7 +81,7 @@ class CalculatorTests: XCTestCase {
         cal.digitPressed(digit: 8.0)
         cal.digitPressed(digit: 9.0)
         cal.zeroPressed()
-        XCTAssertEqual(cal.getScreenWidth(), cal.getAnswer().replacingOccurrences(of: ".", with: "").count)
+        XCTAssertEqual(cal.getScreenWidth(), cal.getDisplay().replacingOccurrences(of: ".", with: "").count)
     }
     
     func testClear() {
