@@ -34,7 +34,13 @@ class Calculator {
         if (decimalStart) {
             return "\(display)."
         } else {
-            return "\(display)".replacingOccurrences(of: ".0", with: "")
+            if (display.truncatingRemainder(dividingBy: 1.0) > 0) {
+                var str = String(format: "%f", display)
+                str = str.trimmingCharacters(in: CharacterSet(charactersIn: "0"))
+                return str
+            } else {
+                return "\(display)".replacingOccurrences(of: ".0", with: "")
+            }
         }
     }
     
