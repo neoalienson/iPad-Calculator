@@ -194,7 +194,7 @@ class CalculatorTests: XCTestCase {
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("3", cal.dividePressed())
         cal.digitPressed(digit: 2.0)
-        XCTAssertEqual("1", cal.equalPressed())
+        XCTAssertEqual("1.5", cal.equalPressed())
     }
     
     func testRoundUp() {
