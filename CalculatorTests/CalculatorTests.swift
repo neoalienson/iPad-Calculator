@@ -30,7 +30,7 @@ class CalculatorTests: XCTestCase {
         cal.digitPressed(digit: 2.0)
         cal.digitPressed(digit: 1.0)
         cal.zeroPressed()
-        XCTAssertEqual("9876543210", cal.getAnswer())
+        XCTAssertEqual("9876543210", cal.getDisplay())
     }
     
     func testScreenWidth() {
@@ -55,7 +55,7 @@ class CalculatorTests: XCTestCase {
         cal.digitPressed(digit: 8.0)
         cal.digitPressed(digit: 9.0)
         cal.zeroPressed()
-        XCTAssertEqual(cal.getScreenWidth(), cal.getAnswer().count)
+        XCTAssertEqual(cal.getScreenWidth(), cal.getDisplay().count)
     }
     
     func testScreenWidthWithDecimal() {
@@ -81,7 +81,7 @@ class CalculatorTests: XCTestCase {
         cal.digitPressed(digit: 8.0)
         cal.digitPressed(digit: 9.0)
         cal.zeroPressed()
-        XCTAssertEqual(cal.getScreenWidth(), cal.getAnswer().replacingOccurrences(of: ".", with: "").count)
+        XCTAssertEqual(cal.getScreenWidth(), cal.getDisplay().replacingOccurrences(of: ".", with: "").count)
     }
     
     func testClear() {
@@ -127,7 +127,7 @@ class CalculatorTests: XCTestCase {
     func testAdd() {
         let cal = Calculator()
         cal.digitPressed(digit: 1.0)
-        cal.addPressed()
+        XCTAssertEqual("1", cal.addPressed())
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("3", cal.equalPressed())
     }
@@ -135,7 +135,7 @@ class CalculatorTests: XCTestCase {
     func testSubstract() {
         let cal = Calculator()
         cal.digitPressed(digit: 9.0)
-        cal.subtractPressed()
+        XCTAssertEqual("9", cal.subtractPressed())
         cal.digitPressed(digit: 8.0)
         XCTAssertEqual("1", cal.equalPressed())
     }
@@ -143,7 +143,7 @@ class CalculatorTests: XCTestCase {
     func testMultiply() {
         let cal = Calculator()
         cal.digitPressed(digit: 3.0)
-        cal.multiplyPressed()
+        XCTAssertEqual("3", cal.multiplyPressed())
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("6", cal.equalPressed())
     }
@@ -151,7 +151,7 @@ class CalculatorTests: XCTestCase {
     func testDivide() {
         let cal = Calculator()
         cal.digitPressed(digit: 6.0)
-        cal.dividePressed()
+        XCTAssertEqual("6", cal.dividePressed())
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("3", cal.equalPressed())
     }
@@ -162,6 +162,9 @@ class CalculatorTests: XCTestCase {
         cal.addPressed()
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("3", cal.addPressed())
+        cal.digitPressed(digit: 4.0)
+        cal.addPressed()
+        XCTAssertEqual("7", cal.equalPressed())
     }
     
     func testSubstractOperator() {
@@ -170,6 +173,8 @@ class CalculatorTests: XCTestCase {
         cal.subtractPressed()
         cal.digitPressed(digit: 8.0)
         XCTAssertEqual("1", cal.subtractPressed())
+        cal.digitPressed(digit: 7.0)
+        XCTAssertEqual("-6", cal.equalPressed())
     }
     
     func testMultiplyOperator() {
@@ -178,6 +183,8 @@ class CalculatorTests: XCTestCase {
         cal.multiplyPressed()
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("6", cal.multiplyPressed())
+        cal.digitPressed(digit: 5.0)
+        XCTAssertEqual("30", cal.equalPressed())
     }
     
     func testDivideOperator() {
@@ -186,6 +193,8 @@ class CalculatorTests: XCTestCase {
         cal.dividePressed()
         cal.digitPressed(digit: 2.0)
         XCTAssertEqual("3", cal.dividePressed())
+        cal.digitPressed(digit: 2.0)
+        XCTAssertEqual("1.5", cal.equalPressed())
     }
     
     func testRoundUp() {
