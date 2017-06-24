@@ -43,6 +43,9 @@ class Calculator {
             if (state.display.truncatingRemainder(dividingBy: 1.0) > 0) {
                 var str = String(format: "%f", state.display)
                 str = str.trimmingCharacters(in: CharacterSet(charactersIn: "0"))
+                if (str.substring(to: str.index(after: str.startIndex)) == ".") {
+                    str = "0" + str
+                }
                 return str
             } else {
                 return "\(state.display)".replacingOccurrences(of: ".0", with: "")
